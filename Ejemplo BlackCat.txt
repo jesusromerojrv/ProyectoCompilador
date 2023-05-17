@@ -1,0 +1,64 @@
+//Programa que muestra los numeros primos
+publico clase numerosPrimos
+{
+    publico estatico vacio principal(cadena arg[])
+        {
+        entero numDigitos=0;
+        entero ndigitos=0;
+        numDigitos=entero.parseInt(arg[0]);
+        si(numDigitos<=0)
+            Sistema.fuera.imrpimirln("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
+            para(entero i = 1; i <= 99999; i++ )
+        {
+            ndigitos=contarDigitos(i);
+            si(ndigitos==numDigitos)
+                si (primo(i) == verdadero) 
+                    Sistema.fuera.imprimirln(i);    
+        }
+        }
+ 
+        publico estatico booleano primo( num)
+        {
+            booleano p = falso;
+     
+            si (num < 4) p = verdadero;
+            si no
+            {
+            si (num % 2 == 0) p = falso; 
+                si no
+                {
+                    entero contador = 0;  
+                    entero i = 1; 
+                    entero limite = (num - 1) / 2; 
+                    si  (limite % 2 == 0) limite--;  
+             
+                    mientras(i <= limite)
+                    {
+                        si (num % i == 0) contador++;
+                            i += 2;
+                            si (contador == 2) i = limite + 1;
+                    }
+ 
+        si (contador == 1) p = verdadero;
+            } 
+        } 
+     
+        retornar p;
+    }
+ 
+    publico estatico entero contarDigitos(entero numeroEntero)
+    {
+            entero divisionEntera = numeroEntero;
+ 
+            entero contador=0;
+ 
+            mientras (divisionEntera != 0)
+        {
+            divisionEntera = divisionEntera / 10;
+            contador++;
+        }
+    retornar contador;
+    }
+ 
+}
+

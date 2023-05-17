@@ -1,0 +1,12 @@
+public class java{ 
+int a = 10 + 5;
+if (a == 13){
+double s = 23.4;
+string f = "hola";
+}
+int c = 2;
+for( int i = 0; i == 10; i++){
+float s = 1.4f;
+char a = 'a';
+}
+}
